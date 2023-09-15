@@ -52,4 +52,4 @@ jobs:
       #     password: ${{ secrets.DOCKERHUB_TOKEN }}
       - uses: actions/checkout@v3
       - name: gluetun-qbit-port-man
-        run: docker buildx build --platform linux/amd64,linux/arm64 -t thejaykid7/gluetun-qbittorrent-port-manager:$(date +%s) push .
+        run: docker buildx build . --platform linux/amd64,linux/arm64 -t thejaykid7/gluetun-qbittorrent-port-manager:$(date +%s) --push
