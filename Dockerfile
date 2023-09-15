@@ -1,3 +1,4 @@
+## added multi plat
 FROM ubuntu:jammy
 
 RUN apt update
@@ -11,5 +12,5 @@ ENV PORT_FORWARDED=tmp/gluetun/forwarded_port
 
 COPY ./start.sh ./start.sh
 RUN chmod 770 ./start.sh
-
+##
 CMD ["./start.sh"]
