@@ -1,0 +1,34 @@
+# name: Docker Image CI
+
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+
+# jobs:
+
+#   build:
+
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: Build the Docker image
+#       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+name: publish
+on: [push]
+jobs:
+  publish-gluetun-qbit-port-man:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to GitHub Container Registry
+# uses: docker/login-action@v1
+# with:
+# registry: ghcr.io
+# username: ${{ github.actor }}
+# password: ${{ secrets.GITHUB_TOKEN }}
+      - name: gluetun-qbit-port-man
+        run: docker build . --platform linux/amd64,linux/arm64 -t thejaykid7/gluetun-qbittorrent-port-manager:$(date +%s)
