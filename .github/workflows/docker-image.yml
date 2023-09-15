@@ -95,7 +95,10 @@
 #         labels: ${{ steps.meta.outputs.labels }}
 
 on:
-  workflow_call:
+  push:
+    branches:
+      - 'main'
+
 name: Docker Image
 
 env:
