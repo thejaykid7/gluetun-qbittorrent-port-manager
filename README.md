@@ -14,6 +14,8 @@ Then add a mounted volume to [Gluetun](https://github.com/qdm12/gluetun/) (e.g. 
 
 Finally, add the following snippet to your `docker-compose.yml`, substituting the default values for your own.
 
+Note that this path mounts to /tmp/gluetun and not /gluetun
+
 ```yml
 ...
 
