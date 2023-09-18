@@ -24,7 +24,7 @@ Note that this path mounts to /tmp/gluetun and not /gluetun
     restart: unless-stopped
     volumes:
       - /yourfolder:/tmp/gluetun #Set "yourfolder" to the same directory you used for Gluetun
-    network_mode: "service: gluetun"
+    network_mode: "services:gluetun"
     environment:
       QBITTORRENT_SERVER: localhost
       QBITTORRENT_PORT: 8080
